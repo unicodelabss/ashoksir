@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Lifetime of Love | Anniversary Tribute</title>
+    <title>Salgirah Mubarak Sir & Ma'am | A Royal Tribute</title>
     
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -13,242 +14,185 @@
     <style>
         :root {
             --gold: #C5A059;
-            --deep-emerald: #022c22;
-            --ivory: #fffcf5;
+            --emerald: #064e3b;
+            --ivory: #fffdfa;
         }
         body { 
             font-family: 'Montserrat', sans-serif; 
             background-color: var(--ivory);
-            color: #2d2d2d;
+            color: #334155;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* Premium Background Texture */
-        .bg-texture {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.443 6.13l-1.414 1.414L40.485 0h2.83zm-26.628 0L10.557 6.13l1.414 1.414L19.515 0h-2.83zM37.6 0l5.03 5.03-1.414 1.414L34.773 0h2.827zM22.4 0l-5.03 5.03 1.414 1.414L25.227 0h-2.827zM31.944 0l1.414 1.414L30.53 2.828 29.115 1.414 31.944 0z' fill='%23c5a059' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        /* Parallax Image Section */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Elegant Gold Divider */
-        .gold-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            width: 80%;
-            margin: 2rem auto;
-        }
-
         .gold-text {
             background: linear-gradient(135deg, #8a642a 0%, #d1b464 25%, #5d4a1f 50%, #d1b464 75%, #8a642a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Animated Number Counter */
-        .counter-box {
+        /* Smooth Section Show */
+        #main-sections {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+            display: none; /* Pehle band rahega */
+        }
+
+        #main-sections.reveal {
+            opacity: 1;
+            transform: translateY(0);
+            display: block; /* Button click pe khulega */
+        }
+
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .royal-border {
             border: 1px solid rgba(197, 160, 89, 0.3);
             background: white;
-            transition: all 0.5s ease;
+            transition: 0.3s;
         }
-        .counter-box:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--ivory); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        .royal-border:hover { border-color: var(--gold); }
     </style>
 </head>
-<body class="bg-texture">
+<body>
 
-    <!-- Audio (Soft Piano Instrumental) -->
-    <audio id="anniversaryAudio" loop>
+    <!-- Background Music -->
+    <audio id="anniversaryMusic" loop>
         <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- 1. INTRO / HERO SECTION -->
-    <header class="h-screen relative flex items-center justify-center overflow-hidden border-b-8 border-emerald-900">
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920" class="w-full h-full object-cover">
-        </div>
+    <!-- 1. HERO SECTION (Hamesha dikhega) -->
+    <header class="h-screen flex flex-col items-center justify-center text-center px-6 relative bg-emerald-950 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20 parallax"></div>
         
-        <div class="z-10 text-center px-4" data-aos="zoom-out" data-aos-duration="2000">
+        <div class="z-10" data-aos="zoom-in" data-aos-duration="1500">
             <div class="mb-6 flex justify-center items-center gap-4">
-                <div class="h-[1px] w-12 bg-amber-600"></div>
-                <span class="text-amber-700 tracking-[0.6em] uppercase text-xs font-semibold">The Milestone of Love</span>
-                <div class="h-[1px] w-12 bg-amber-600"></div>
+                <div class="h-[1px] w-12 bg-amber-500"></div>
+                <span class="text-amber-500 tracking-[0.4em] uppercase text-[10px] font-bold">The Celebration of Love</span>
+                <div class="h-[1px] w-12 bg-amber-500"></div>
             </div>
-            <h1 class="font-serif text-6xl md:text-9xl mb-4 leading-tight">Happy <br><span class="gold-text italic">Anniversary</span></h1>
-            <p class="font-serif text-2xl md:text-4xl text-gray-700 italic">To our Respected Sir & Ma'am</p>
+            <h1 class="font-serif text-5xl md:text-8xl mb-4 leading-tight">Happy <br><span class="gold-text italic">Anniversary</span></h1>
+            <p class="font-serif text-xl md:text-3xl text-gray-300 italic mb-10">To Our Most Respected Sir & Ma'am</p>
             
-            <div class="mt-12">
-                <button onclick="unlockCelebration()" class="px-12 py-4 bg-emerald-900 text-white rounded-full tracking-widest text-xs uppercase hover:bg-emerald-800 transition shadow-2xl">
-                    Experience The Journey
-                </button>
-            </div>
+            <button onclick="revealContent()" id="unlockBtn" class="px-10 py-4 border-2 border-amber-600 text-amber-500 rounded-full tracking-widest text-xs uppercase hover:bg-amber-600 hover:text-white transition-all duration-500 shadow-2xl">
+                Experience the Journey
+            </button>
         </div>
     </header>
 
-    <div id="main-content" class="hidden">
+    <!-- MAIN SECTIONS (Unlock hone ke baad khulenge) -->
+    <div id="main-sections">
         
-        <!-- 2. MILESTONE COUNTER (Dynamic Effect) -->
-        <section class="py-24 bg-white">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="counter-box p-8 rounded-2xl" data-aos="fade-up">
-                        <h3 class="text-4xl font-bold text-emerald-900 mb-2">25+</h3>
-                        <p class="text-xs uppercase tracking-widest text-gray-500">Years Together</p>
-                    </div>
-                    <div class="counter-box p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-4xl font-bold text-emerald-900 mb-2">9125+</h3>
-                        <p class="text-xs uppercase tracking-widest text-gray-500">Days of Happiness</p>
-                    </div>
-                    <div class="counter-box p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-4xl font-bold text-emerald-900 mb-2">Infinite</h3>
-                        <p class="text-xs uppercase tracking-widest text-gray-500">Shared Smiles</p>
-                    </div>
-                    <div class="counter-box p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-4xl font-bold text-emerald-900 mb-2">Countless</h3>
-                        <p class="text-xs uppercase tracking-widest text-gray-500">Lessons Taught</p>
-                    </div>
+        <!-- 2. COUNTER SECTION -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="royal-border p-8 rounded-2xl text-center" data-aos="fade-up">
+                    <h3 class="text-4xl font-bold text-emerald-900 mb-1">25+</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">Years of Unity</p>
+                </div>
+                <div class="royal-border p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-4xl font-bold text-emerald-900 mb-1">9k+</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">Beautiful Days</p>
+                </div>
+                <div class="royal-border p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-4xl font-bold text-emerald-900 mb-1">Infinite</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">Love & Respect</p>
+                </div>
+                <div class="royal-border p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-4xl font-bold text-emerald-900 mb-1">Countless</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400">Student Blessings</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. THE FOUNDATIONS (Elegant Icons) -->
-        <section class="py-24">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="font-serif text-4xl md:text-5xl mb-12">The Pillars of Your Bond</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div data-aos="fade-right">
-                        <i class="fa-solid fa-hand-holding-heart text-4xl text-amber-600 mb-6"></i>
-                        <h4 class="font-bold text-lg mb-2">Respect</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">A foundation built on mutual admiration and deep-rooted respect for each other's dreams.</p>
-                    </div>
-                    <div data-aos="fade-up">
-                        <i class="fa-solid fa-feather-pointed text-4xl text-amber-600 mb-6"></i>
-                        <h4 class="font-bold text-lg mb-2">Wisdom</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Guiding each other and your students with the grace of shared wisdom over the years.</p>
-                    </div>
-                    <div data-aos="fade-left">
-                        <i class="fa-solid fa-infinity text-4xl text-amber-600 mb-6"></i>
-                        <h4 class="font-bold text-lg mb-2">Companionship</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Walking hand-in-hand through every season of life, inspiring everyone around you.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. PARALLAX QUOTE SECTION -->
-        <section class="h-[60vh] parallax flex items-center justify-center relative border-y-4 border-emerald-900" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1920');">
-            <div class="absolute inset-0 bg-black/60"></div>
-            <div class="relative z-10 text-center px-6">
-                <p class="font-serif text-3xl md:text-5xl text-white italic max-w-4xl leading-relaxed">
-                    "A successful marriage requires falling in love many times, always with the same person."
+        <!-- 3. MESSAGE SECTION -->
+        <section class="py-24 px-6">
+            <div class="max-w-4xl mx-auto bg-white p-12 md:p-20 shadow-xl rounded-3xl border border-amber-100 text-center" data-aos="fade-up">
+                <i class="fa-solid fa-quote-left text-amber-100 text-6xl mb-8"></i>
+                <h2 class="font-serif text-4xl mb-8">A Tribute to Your Bond</h2>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-600 italic mb-10">
+                    "Sir, aapki jodi hum sab ke liye ek inspiration hai. Aapne humein kitabein hi nahi, rishton ko nibhana bhi sikhaya hai. Aaj aap dono ke is khaas din par hum dil se shubhkamnayein dete hain."
                 </p>
-                <div class="mt-8 h-[2px] w-24 bg-amber-500 mx-auto"></div>
+                <div class="h-[1px] w-20 bg-amber-500 mx-auto mb-4"></div>
+                <p class="font-bold text-emerald-950 uppercase tracking-widest text-xs">- Your Proud Batch -</p>
             </div>
         </section>
 
-        <!-- 5. TRIBUTE FROM STUDENTS (Typewriter Styled) -->
-        <section class="py-24 bg-white">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-16">
-                    <div class="w-full md:w-1/2" data-aos="fade-right">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x800" class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
-                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-500 opacity-20"></div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2" data-aos="fade-left">
-                        <span class="text-amber-700 font-bold tracking-widest text-xs uppercase">A Heartfelt Message</span>
-                        <h2 class="font-serif text-4xl mt-4 mb-8">Dear Sir & Ma'am,</h2>
-                        <p class="text-gray-700 leading-relaxed text-lg mb-6 italic">
-                            "Aapka rishta hum sab ke liye sikhne ka ek zariya hai. Sir, aapne class mein jitna gyaan diya, usse bhi zyada aapne humein 'jivan' (life) ke values sikhaye hain."
-                        </p>
-                        <p class="text-gray-700 leading-relaxed text-lg mb-8">
-                            Aaj aapki anniversary par, hum poora batch yeh dua karte hain ki aapki jodi isi tarah barkarar rahe, aur aap dono hamesha swasth aur khush rahein. Anniversary ki dheron shubhkamnayein!
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div class="h-[2px] w-12 bg-emerald-900"></div>
-                            <span class="font-bold text-emerald-900">With Love, Your Students</span>
-                        </div>
-                    </div>
+        <!-- 4. GALLERY -->
+        <section class="py-24 bg-emerald-50">
+            <h2 class="text-center font-serif text-4xl mb-16 gold-text">Timeless Memories</h2>
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frame 1 -->
+                <div class="bg-white p-4 shadow-xl rounded-lg" data-aos="zoom-in">
+                    <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <!-- Frame 2 -->
+                <div class="bg-white p-4 shadow-xl rounded-lg" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <!-- Frame 3 -->
+                <div class="bg-white p-4 shadow-xl rounded-lg" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition duration-700">
                 </div>
             </div>
         </section>
 
-        <!-- 6. THE LEGACY GALLERY (Masonry Feel) -->
-        <section class="py-24">
-            <h2 class="text-center font-serif text-5xl mb-16 gold-text italic">Capturing Elegance</h2>
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-xl shadow-xl" data-aos="zoom-in">
-                    <img src="https://via.placeholder.com/800x1000" class="w-full h-full object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden rounded-xl shadow-xl" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://via.placeholder.com/400x400" class="w-full h-full object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="overflow-hidden rounded-xl shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/400x400" class="w-full h-full object-cover hover:scale-105 transition duration-700">
-                </div>
-                <div class="md:col-span-2 overflow-hidden rounded-xl shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://via.placeholder.com/800x400" class="w-full h-full object-cover hover:scale-105 transition duration-700">
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. FINAL SIGNATURE FOOTER -->
+        <!-- 5. FOOTER -->
         <footer class="py-20 bg-emerald-950 text-white text-center">
             <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
-                <i class="fa-solid fa-heart text-amber-500 text-3xl mb-8"></i>
-                <h2 class="font-serif text-3xl md:text-5xl mb-6">May Your Love Story Continue Forever</h2>
-                <div class="gold-divider"></div>
-                <p class="text-gray-400 text-sm tracking-[0.3em] uppercase mb-12">Handcrafted by Your Proud Batch</p>
-                <p class="font-serif italic text-xl text-amber-200">Happy Anniversary Sir & Ma'am! ❤️</p>
+                <i class="fa-solid fa-heart text-amber-500 text-3xl mb-8 animate-pulse"></i>
+                <h2 class="font-serif text-3xl md:text-5xl mb-6">May Your Love Story <br> Be Eternal</h2>
+                <p class="text-amber-500 font-serif italic text-xl">Happy Anniversary Sir & Ma'am! ❤️</p>
             </div>
         </footer>
+
     </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    
     <script>
-        function unlockCelebration() {
-            // Play Audio
-            document.getElementById('anniversaryAudio').play();
+        function revealContent() {
+            // 1. Music Play
+            const music = document.getElementById('anniversaryMusic');
+            music.play().catch(e => console.log("Autoplay blocked, playing after interaction"));
 
-            // Confetti
-            var duration = 5 * 1000;
-            var animationEnd = Date.now() + duration;
-            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, colors: ['#C5A059', '#ffffff', '#022c22'] };
+            // 2. Confetti Effect
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#C5A059', '#ffffff', '#064e3b']
+            });
 
-            var interval = setInterval(function() {
-                var timeLeft = animationEnd - Date.now();
-                if (timeLeft <= 0) return clearInterval(interval);
-                var particleCount = 50 * (timeLeft / duration);
-                confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
-            }, 250);
-
-            // Show Content
-            document.getElementById('main-content').classList.remove('hidden');
-            
-            // Scroll to next section smoothly
+            // 3. Show Content
+            const main = document.getElementById('main-sections');
+            main.style.display = 'block';
             setTimeout(() => {
-                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-            }, 500);
+                main.classList.add('reveal');
+                // Scroll to content
+                window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            }, 100);
 
-            // Init Animations
+            // 4. Init Animations
             AOS.init({ duration: 1000, once: true });
+            
+            // 5. Hide Button
+            document.getElementById('unlockBtn').style.display = 'none';
         }
+
+        // AOS initialization default
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 800, once: true });
+        });
     </script>
 </body>
 </html>
