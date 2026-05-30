@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Sir & Ma'am | A Special Tribute</title>
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --ivory: #fffdf5;
+            --deep-green: #064e3b;
+        }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--ivory);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Gold Gradient Text */
+        .gold-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Royal Card Style */
+        .royal-card {
+            background: white;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .royal-card::before {
+            content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            pointer-events: none;
+        }
+
+        /* Hero Section Animation */
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cream-pixels.png');
+        }
+
+        /* Floating Rings Effect */
+        .ring-icon {
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+
+    <!-- Music (Soft Instrumental) -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 1. HERO SECTION -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+        <div class="z-10" data-aos="fade-up" data-aos-duration="1500">
+            <div class="ring-icon mb-6">
+                <i class="fa-solid fa-rings-wedding text-6xl text-amber-500"></i>
+            </div>
+            <h2 class="text-xl uppercase tracking-[0.5em] text-gray-500 mb-4">Celebrating Togetherness</h2>
+            <h1 class="font-serif text-5xl md:text-8xl mb-6">Happy Wedding <br> <span class="gold-text">Anniversary</span></h1>
+            <p class="font-serif italic text-2xl md:text-3xl text-gray-600 mb-10">To Our Dearest Sir & Ma'am</p>
+            
+            <button onclick="startCelebration()" class="border-2 border-amber-600 text-amber-700 px-10 py-3 rounded-full font-semibold hover:bg-amber-600 hover:text-white transition-all duration-500 tracking-widest uppercase text-xs">
+                Enter the Celebration
+            </button>
+        </div>
+        
+        <!-- Decorative Corners -->
+        <div class="absolute top-0 left-0 p-8 opacity-20 hidden md:block">
+            <img src="https://cdn-icons-png.flaticon.com/512/1042/1042458.png" class="w-32">
+        </div>
+        <div class="absolute bottom-0 right-0 p-8 opacity-20 hidden md:block rotate-180">
+            <img src="https://cdn-icons-png.flaticon.com/512/1042/1042458.png" class="w-32">
+        </div>
+    </header>
+
+    <!-- 2. MESSAGE SECTION -->
+    <section class="py-24 px-6 bg-white shadow-inner">
+        <div class="max-w-4xl mx-auto royal-card p-12 md:p-20 text-center" data-aos="fade-up">
+            <i class="fa-solid fa-quote-left text-amber-200 text-6xl mb-6"></i>
+            <h2 class="font-serif text-4xl mb-8">A Note of Gratitude</h2>
+            <p class="text-xl leading-relaxed text-gray-700 italic mb-8">
+                "Sir, aapne humein hamesha sahi raasta dikhaya hai. Aaj aapke is khaas din par, hum poore batch ki taraf se aapko aur Ma'am ko dheron badhaiyan dete hain. Aap dono ki jodi hum sab ke liye ek misaal hai—prem, samman aur dheron yaadon se bhari hui."
+            </p>
+            <p class="font-bold text-amber-700">— Your Students</p>
+        </div>
+    </section>
+
+    <!-- 3. PHOTO GALLERY (FRAMED) -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-serif text-5xl text-center mb-16 gold-text italic">Journey of Love</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frame 1 -->
+                <div class="royal-card p-4 group" data-aos="zoom-in">
+                    <div class="overflow-hidden border border-gray-100">
+                        <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <p class="text-center mt-4 font-serif italic">Beautiful Memories</p>
+                </div>
+                <!-- Frame 2 -->
+                <div class="royal-card p-4 group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="overflow-hidden border border-gray-100">
+                        <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <p class="text-center mt-4 font-serif italic">Milestones of Togetherness</p>
+                </div>
+                <!-- Frame 3 -->
+                <div class="royal-card p-4 group" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="overflow-hidden border border-gray-100">
+                        <img src="https://via.placeholder.com/600x800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <p class="text-center mt-4 font-serif italic">Forever to Go</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ANNIVERSARY WISHES -->
+    <section class="py-24 px-6 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-4xl mb-12" data-aos="fade-up">From the Heart of Your Students</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="p-6 border-l-2 border-amber-500 bg-white/5" data-aos="fade-right">
+                    <p class="italic">"Happy Anniversary Sir! Aap hamesha haste rahein aur Ma'am ke saath aapka safar hamesha khoobsurat rahe."</p>
+                    <p class="mt-4 text-amber-500 font-bold">- Rahul & Batch</p>
+                </div>
+                <div class="p-6 border-l-2 border-amber-500 bg-white/5" data-aos="fade-left">
+                    <p class="italic">"Wishing you both a lifetime of happiness. Thank you for being a wonderful teacher and a great human being."</p>
+                    <p class="mt-4 text-amber-500 font-bold">- Sneha & Batch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 text-center border-t border-amber-100">
+        <p class="text-gray-400 uppercase tracking-widest text-xs">A Small Tribute from Your Students</p>
+        <p class="mt-2 text-amber-700 font-serif">Happy Anniversary Sir & Ma'am! ❤️</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function startCelebration() {
+            // Play Music
+            document.getElementById('bgMusic').play();
+
+            // Gold Confetti
+            var end = Date.now() + (2 * 1000);
+            var colors = ['#d4af37', '#fcf6ba', '#ffffff'];
+
+            (function frame() {
+                confetti({
+                    particleCount: 3,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: colors
+                });
+                confetti({
+                    particleCount: 3,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: colors
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+
+            // Scroll to next section
+            window.scrollBy(0, window.innerHeight);
+        }
+    </script>
+</body>
+</html>
